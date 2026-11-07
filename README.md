@@ -17,6 +17,7 @@ Personal portfolio built for K0126002 (Gachon University, 2026 Fall).
   - Scroll reveal, scroll progress bar, animated counters, copy-email button
 - Accessibility: skip link, visible focus styles, descriptive alt text, WCAG AA contrast in both themes, `prefers-reduced-motion` support, keyboard-operable dialogs
 - Lighthouse: Accessibility 100 in dark and light themes (desktop and mobile)
+- Downloadable one-page resume (PDF) with an on-site preview section
 - No frameworks and no build step. Deploys as-is on GitHub Pages.
 
 ## Structure
@@ -29,6 +30,9 @@ portfolio/
     theme.js      <- dark/light toggle
     effects.js    <- hero canvas, reveal, tilt, counters, nav
     explorer.js   <- skills, projects, terminal, certificates
+  resume/
+    resume.html   <- source of the PDF (also a web version)
+    Rahimjon_Komiljonov_Resume.pdf
   images/
     media/        <- compressed demo videos, loops and posters
 ```

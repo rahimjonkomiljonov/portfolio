@@ -365,3 +365,14 @@ p { margin: 0 0 1rem; }
 .i-sqlalchemy { --c: #D71F00; }
 .i-android { --c: #3DDC84; }
 .i-cheerio { --c: #E88C1F; }
+
+/* ============ Resume ============ */
+.resume-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; }
+.resume-points { list-style: none; padding: 0; margin: 1.2rem 0 0; }
+.resume-points li { position: relative; padding-left: 1.7rem; margin-bottom: .5rem; }
+.resume-points li::before { content: ""; position: absolute; left: 0; top: .5em; width: .9rem; height: .5rem; border-left: 3px solid var(--accent); border-bottom: 3px solid var(--accent); transform: rotate(-45deg) scale(.9); }
+.file-meta { margin-top: 1.2rem; font-family: var(--mono); font-size: .82rem; color: var(--muted); }
+.resume-card { display: block; justify-self: center; width: min(400px, 100%); border-radius: 10px; background: #fff; box-shadow: 0 30px 70px rgba(0,0,0,.35), 0 0 0 1px var(--line); overflow: hidden; }
+.resume-card img { width: 100%; height: auto; }
+.resume-card:hover { box-shadow: 0 40px 90px rgba(0,0,0,.45), 0 0 0 2px var(--accent); }
+@media (max-width: 900px) { .resume-grid { grid-template-columns: 1fr; } }

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap">
-  <link rel="stylesheet" href="./style.css?v=6">
+  <link rel="stylesheet" href="./style.css?v=7">
   <script>
     /* Set the theme before first paint (no flash). Dark by default. */
     (function () {
@@ -37,6 +37,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode">
@@ -59,6 +60,7 @@
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects" data-magnetic>See my projects</a>
             <a class="btn btn-ghost" href="#contact" data-magnetic>Get in touch</a>
+            <a class="btn btn-ghost" href="resume/Rahimjon_Komiljonov_Resume.pdf" download data-magnetic>Download resume<span class="sr-only"> (PDF)</span></a>
           </div>
         </div>
         <div class="hero-visual">
@@ -338,10 +340,35 @@
       </div>
     </section>
 
+    <!-- ===================== RESUME ===================== -->
+    <section class="section alt" id="resume" aria-labelledby="resume-title">
+      <div class="wrap resume-grid">
+        <div class="resume-text">
+          <p class="eyebrow reveal">05 / Resume</p>
+          <h2 id="resume-title" class="reveal">Everything on one page</h2>
+          <p class="section-intro reveal">My education, projects, skills and certifications in a clean, one-page, recruiter-friendly resume. Download it, share it, or read it in your browser.</p>
+          <ul class="resume-points reveal">
+            <li>Computer Engineering, Gachon University</li>
+            <li>6 selected projects, from computer vision to mobile</li>
+            <li>4 certifications and 3 languages</li>
+          </ul>
+          <div class="cta-row reveal">
+            <a class="btn btn-primary" href="resume/Rahimjon_Komiljonov_Resume.pdf" download data-magnetic>Download PDF<span class="sr-only"> resume</span></a>
+            <a class="btn btn-ghost" href="resume/Rahimjon_Komiljonov_Resume.pdf" target="_blank" rel="noopener" data-magnetic>View in browser<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+          <p class="file-meta reveal">PDF &middot; 1 page &middot; A4 &middot; updated Nov 2026</p>
+        </div>
+        <a class="resume-card reveal" data-delay="120" data-tilt href="resume/Rahimjon_Komiljonov_Resume.pdf" target="_blank" rel="noopener" aria-label="Open the resume PDF in a new tab">
+          <span class="glare" aria-hidden="true"></span>
+          <img src="images/resume-preview.jpg" width="900" height="1273" loading="lazy" alt="Preview of Rahimjon Komiljonov's one-page resume with summary, education, six projects, skills, certifications and languages">
+        </a>
+      </div>
+    </section>
+
     <!-- ===================== CONTACT ===================== -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-card reveal">
-        <p class="eyebrow">05 / Contact</p>
+        <p class="eyebrow">06 / Contact</p>
         <h2 id="contact-title">Let's build something together</h2>
         <p class="section-intro">I'm open to internships, collaborations and interesting side projects, especially in AI, security and software.</p>
         <div class="cta-row">
@@ -349,6 +376,7 @@
           <a class="btn btn-ghost" href="mailto:rahimjon4753@gmail.com" data-magnetic>Send an email</a>
         </div>
         <ul class="socials">
+          <li><a href="resume/Rahimjon_Komiljonov_Resume.pdf" download>Resume (PDF)</a></li>
           <li><a href="https://github.com/rahimjonkomiljonov" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a></li>
           <li><a href="https://www.linkedin.com/in/rahimjon-komiljonov/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
         </ul>
@@ -369,8 +397,8 @@
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="./js/theme.js?v=6" defer></script>
-  <script src="./js/effects.js?v=6" defer></script>
-  <script src="./js/explorer.js?v=6" defer></script>
+  <script src="./js/theme.js?v=7" defer></script>
+  <script src="./js/effects.js?v=7" defer></script>
+  <script src="./js/explorer.js?v=7" defer></script>
 </body>
 </html>
