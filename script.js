@@ -20,8 +20,9 @@
     if (themeColor) themeColor.setAttribute('content', theme === 'dark' ? '#12110f' : '#faf7f2');
     if (toggle) {
       var isDark = theme === 'dark';
-      toggle.setAttribute('aria-pressed', String(isDark));
-      toggle.querySelector('.toggle-text').textContent = isDark ? 'Light' : 'Dark';
+      var label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+      toggle.setAttribute('aria-label', label);
+      toggle.setAttribute('title', label);
       toggle.querySelector('.toggle-icon').textContent = isDark ? '☀' : '☾';
     }
   }
