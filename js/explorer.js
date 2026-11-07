@@ -108,7 +108,7 @@
     'Kotlin': ['Native Android: the Finance Widget’s app and home-screen widget.', ['finance']],
     'Java': ['Android fundamentals from my Mobile Programming coursework.', []],
     'SQL': ['Schemas, migrations and Row Level Security policies in PostgreSQL.', ['polling']],
-    'HTML & CSS': ['This portfolio is hand-written HTML and CSS: semantic, responsive and accessible.', []],
+    'HTML & CSS': ['This portfolio uses semantic, responsive and accessible HTML and CSS.', []],
     'MediaPipe': ['Face landmarks, head pose and eye-gaze blendshapes for the attention tracker.', ['tracker']],
     'OpenCV': ['Webcam capture and frame handling for real-time vision.', ['tracker']],
     'Gemini API': ['Multimodal video understanding and schema-constrained output.', ['recipe']],
