@@ -20,6 +20,12 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+          <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">
+            <span class="toggle-icon" aria-hidden="true">&#9790;</span>
+            <span class="toggle-text">Dark</span><span class="sr-only"> mode</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -147,11 +153,22 @@
       <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
     </section>
 
-    <!--NEXT-->
+    <section id="contact" aria-labelledby="contact-title">
+      <p class="eyebrow">04 / Contact</p>
+      <h2 id="contact-title">Let's build something</h2>
+      <p class="section-intro">I'm open to internships, collaborations and interesting side projects. The quickest way to reach me is email.</p>
+      <ul class="contact-list">
+        <li><a class="contact-link" href="mailto:rahimjon4753@gmail.com"><span class="label">Email</span>rahimjon4753@gmail.com</a></li>
+        <li><a class="contact-link" href="https://github.com/rahimjonkomiljonov" target="_blank" rel="noopener"><span class="label">GitHub</span>rahimjonkomiljonov<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="contact-link" href="https://www.linkedin.com/in/rahimjon-komiljonov/" target="_blank" rel="noopener"><span class="label">LinkedIn</span>rahimjon-komiljonov<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Rahimjon Komiljonov. Built with plain HTML, CSS and JavaScript.</p>
   </footer>
+
+  <script src="./script.js" defer></script>
 </body>
 </html>

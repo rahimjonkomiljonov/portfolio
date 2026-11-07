@@ -147,4 +147,39 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
-/*NEXT*/
+/* ---------- Contact ---------- */
+.contact-list { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.contact-link {
+  display: block; padding: 1.2rem 1.4rem; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  color: var(--ink); text-decoration: none; font-weight: 600; overflow-wrap: anywhere;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.contact-link:hover { border-color: var(--accent); transform: translateY(-3px); }
+.contact-link .label { display: block; font-family: var(--mono); font-size: .8rem; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; text-align: left; }
+  .hero-photo { order: -1; justify-self: start; }
+  .hero-photo img { width: min(240px, 70vw); }
+  .about-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .site-header { flex-wrap: wrap; justify-content: center; }
+  .nav-list a { padding: .45rem .6rem; }
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle {
+  font: inherit; font-weight: 600; cursor: pointer; color: var(--ink);
+  background: var(--surface); border: 2px solid var(--line);
+  padding: .4rem .9rem; border-radius: 999px; display: inline-flex; gap: .4rem; align-items: center;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
