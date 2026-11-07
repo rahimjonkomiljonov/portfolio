@@ -320,3 +320,48 @@ p { margin: 0 0 1rem; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ============ Technology icons ============ */
+.ic { width: 1.2em; height: 1.2em; flex: none; fill: currentColor; color: var(--c, var(--ink)); }
+:root[data-theme="dark"] .ic-dk, :root[data-theme="light"] .ic-lt { color: var(--ink); }
+.skill-chip { display: inline-flex; align-items: center; gap: .55rem; }
+.skill-chip .ic { width: 1.35em; height: 1.35em; transition: transform .3s var(--ease); }
+.skill-chip:hover .ic { transform: scale(1.2) rotate(-6deg); }
+.skill-chip[aria-pressed="true"] .ic { color: currentColor; }
+.skill-detail h3 { display: flex; align-items: center; gap: .6rem; }
+.skill-detail h3 .ic { width: 1.1em; height: 1.1em; color: var(--c, var(--accent)); }
+.skill-detail h3 .ic-dk, .skill-detail h3 .ic-lt { }
+.chips li { display: inline-flex; align-items: center; gap: .4rem; }
+.chips li .ic { width: 1.05em; height: 1.05em; }
+.i-python { --c: #3776AB; }
+.i-typescript { --c: #3178C6; }
+.i-javascript { --c: #F7DF1E; }
+.i-kotlin { --c: #7F52FF; }
+.i-openjdk { --c: #000000; }
+.i-sql { --c: var(--accent); }
+.i-html5 { --c: #E34F26; }
+.i-mediapipe { --c: #0097A7; }
+.i-opencv { --c: #5C3EE8; }
+.i-googlegemini { --c: #8E75B2; }
+.i-numpy { --c: #013243; }
+.i-pandas { --c: #150458; }
+.i-nextdotjs { --c: #000000; }
+.i-react { --c: #61DAFB; }
+.i-expo { --c: #1C2024; }
+.i-tailwindcss { --c: #06B6D4; }
+.i-electron { --c: #47848F; }
+.i-jetpackcompose { --c: #4285F4; }
+.i-nodedotjs { --c: #5FA04E; }
+.i-express { --c: #0A0A0A; }
+.i-fastapi { --c: #009688; }
+.i-ws { --c: var(--accent); }
+.i-supabase { --c: #3FCF8E; }
+.i-postgresql { --c: #4169E1; }
+.i-sqlite { --c: #003B57; }
+.i-streamlit { --c: #FF4B4B; }
+.i-git { --c: #F03C2E; }
+.i-vercel { --c: #000000; }
+.i-plotly { --c: #7A76FF; }
+.i-sqlalchemy { --c: #D71F00; }
+.i-android { --c: #3DDC84; }
+.i-cheerio { --c: #E88C1F; }

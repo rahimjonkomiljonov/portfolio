@@ -36,3 +36,7 @@ portfolio/
 ## Run locally
 
 Run `python -m http.server` in this folder and visit http://localhost:8000.
+
+## Credits
+
+Technology logos come from [Simple Icons](https://simpleicons.org) (CC0). Logos are trademarks of their respective owners. The SQL and WebSockets icons are custom.

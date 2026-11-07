@@ -126,8 +126,28 @@
     'Supabase': ['Postgres, Realtime and Row Level Security on a free tier.', ['polling']],
     'PostgreSQL': ['The relational store behind live polls and Q&A.', ['polling']],
     'SQLite': ['Lightweight local storage for the Recipe Manager.', ['recipe']],
-    'Streamlit': ['Rapid Python dashboards, like the voting system’s admin panel.', ['voting']]
+    'Streamlit': ['Rapid Python dashboards, like the voting system’s admin panel.', ['voting']],
+    'React Native': ['Cross-platform mobile apps with Expo, like my Expiry Manager, which tracks expiry dates.', []],
+    'Expo': ['Builds, routing and on-device testing for my React Native apps.', []],
+    'Git & GitHub': ['Every project here lives on GitHub, and this portfolio is deployed from it with GitHub Pages.', []],
+    'Vercel': ['Hosts Overlap, and runs the cron jobs that clean up stale polling rooms.', ['overlap', 'polling']]
   };
+
+  /* Technology name -> icon id in the inline sprite (see index.html) */
+  var ICONS = {
+    'Python': 'python', 'TypeScript': 'typescript', 'JavaScript': 'javascript', 'Kotlin': 'kotlin', 'Java': 'openjdk', 'SQL': 'sql',
+    'MediaPipe': 'mediapipe', 'OpenCV': 'opencv', 'Gemini API': 'googlegemini', 'NumPy': 'numpy', 'Pandas': 'pandas',
+    'Next.js': 'nextdotjs', 'Next.js 16': 'nextdotjs', 'Next.js 15': 'nextdotjs', 'React': 'react', 'React 19': 'react', 'React Native': 'react',
+    'Expo': 'expo', 'Tailwind': 'tailwindcss', 'Tailwind CSS': 'tailwindcss', 'Electron': 'electron', 'Jetpack Compose': 'jetpackcompose', 'Compose': 'jetpackcompose',
+    'Node.js': 'nodedotjs', 'Express': 'express', 'FastAPI': 'fastapi', 'WebSockets': 'ws', 'Supabase': 'supabase', 'PostgreSQL': 'postgresql',
+    'SQLite': 'sqlite', 'Streamlit': 'streamlit', 'Vercel': 'vercel', 'Plotly': 'plotly', 'SQLAlchemy': 'sqlalchemy', 'WorkManager': 'android', 'Cheerio': 'cheerio'
+  };
+  /* Logos that are near-black (dark) or very light need the text colour on one theme */
+  var ICON_CLS = { 'javascript': 'ic-lt', 'openjdk': 'ic-dk', 'numpy': 'ic-dk', 'pandas': 'ic-dk', 'nextdotjs': 'ic-dk', 'react': 'ic-lt', 'expo': 'ic-dk', 'express': 'ic-dk', 'supabase': 'ic-lt', 'sqlite': 'ic-dk', 'vercel': 'ic-dk', 'android': 'ic-lt' };
+  function iconSvg(id) {
+    return '<svg class="ic i-' + id + (ICON_CLS[id] ? ' ' + ICON_CLS[id] : '') + '" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-' + id + '"/></svg>';
+  }
+  function withIcon(name) { return ICONS[name] ? iconSvg(ICONS[name]) + '<span>' + name + '</span>' : name; }
 
   var TERM = {
     whoami: 'Rahimjon Komiljonov — Computer Engineering student at Gachon University, South Korea. AI · Cybersecurity · Software.',
@@ -148,7 +168,9 @@
   function showSkill(name) {
     var d = SKILLS[name];
     if (!d || !detail) return;
-    var html = '<h3>' + esc(name) + '</h3><p>' + esc(d[0]) + '</p>';
+    var chip = chips.filter(function (c) { return c.dataset.skill === name; })[0];
+    var svg = chip && chip.querySelector('svg') ? chip.querySelector('svg').outerHTML : '';
+    var html = '<h3>' + svg + '<span>' + esc(name) + '</span></h3><p>' + esc(d[0]) + '</p>';
     if (d[1].length) {
       html += '<p class="detail-label">Used in</p><ul class="used-in">' + d[1].map(function (id) {
         return '<li><button type="button" class="link-btn" data-open="' + id + '">' + esc(PROJECTS[id].title) + '</button></li>';
@@ -172,6 +194,9 @@
     });
   });
   if (chips.length) showSkill('Python');
+
+  /* icons on the tech chips of the project cards */
+  $$('.project .chips li').forEach(function (li) { li.innerHTML = withIcon(li.textContent.trim()); });
 
   /* ======================= PROJECT FILTER ======================= */
   var filters = $$('.filter');
@@ -206,7 +231,7 @@
     h += '<p class="pd-kind">' + esc(p.kind) + ' · ' + esc(p.period) + '</p>';
     h += '<h2 id="pd-title">' + esc(p.title) + '</h2><p class="pd-summary">' + esc(p.summary) + '</p>';
     h += '<h3 class="pd-h">Highlights</h3><ul class="pd-list">' + p.points.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
-    h += '<h3 class="pd-h">Tech stack</h3><ul class="chips">' + p.stack.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+    h += '<h3 class="pd-h">Tech stack</h3><ul class="chips">' + p.stack.map(function (x) { return '<li>' + withIcon(esc(x)) + '</li>'; }).join('') + '</ul>';
     h += '<div class="pd-links">' + p.links.map(function (l) {
       return '<a class="btn btn-primary" href="' + l.url + '" target="_blank" rel="noopener">' + esc(l.label) + '<span class="sr-only"> (opens in a new tab)</span></a>';
     }).join('');
