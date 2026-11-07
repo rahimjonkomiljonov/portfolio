@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rahimjon Komiljonov - Resume</title>
+  <meta name="author" content="Rahimjon Komiljonov">
+  <style>
+    @page { size: A4; margin: 0; }
+    :root { --ink: #14201d; --muted: #4a5a55; --accent: #0f766e; --line: #d5dfdb; }
+    * { box-sizing: border-box; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; background: #e9eeeb; color: var(--ink);
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 9pt; line-height: 1.33;
+    }
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; background: #fff; padding: 13mm 15mm 11mm; }
+    @media print { body { background: #fff; } .page { margin: 0; min-height: auto; padding: 10mm 13.5mm 8mm; } }
+
+    header { border-bottom: 2.5px solid var(--accent); padding-bottom: 7px; margin-bottom: 9px; }
+    h1 { margin: 0; font-size: 23pt; letter-spacing: -.4px; line-height: 1.05; }
+    .title { margin: 2px 0 6px; font-size: 11pt; font-weight: 600; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 8.8pt; color: var(--muted); }
+    .contact a { color: var(--ink); text-decoration: none; }
+    .contact b { color: var(--accent); font-weight: 700; }
+
+    h2 {
+      margin: 8px 0 4px; font-size: 9.3pt; letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+      border-bottom: 1px solid var(--line); padding-bottom: 2px;
+    }
+    p { margin: 0 0 4px; }
+    .summary { color: #22302c; }
+
+    .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+    .row strong { font-size: 9.8pt; }
+    .when { color: var(--muted); font-size: 8.8pt; white-space: nowrap; }
+    .sub { color: var(--muted); font-size: 8.8pt; margin-bottom: 2px; }
+    .tech { color: var(--accent); font-weight: 600; font-size: 8.6pt; }
+
+    .item { margin-bottom: 5px; break-inside: avoid; }
+    ul { margin: 2px 0 0; padding-left: 14px; }
+    li { margin-bottom: 1px; }
+    li::marker { color: var(--accent); }
+
+    .skills { display: grid; grid-template-columns: 105px 1fr; gap: 2px 8px; }
+    .skills dt { font-weight: 700; }
+    .skills dd { margin: 0; color: #22302c; }
+
+    .two { display: grid; grid-template-columns: 1.55fr 1fr; gap: 0 22px; }
+    .cert { margin-bottom: 3px; }
+    .cert span { color: var(--muted); font-size: 8.8pt; }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Rahimjon Komiljonov</h1>
+    <div class="title">Computer Engineering Student &middot; AI, Cybersecurity &amp; Software</div>
+    <div class="contact">
+      <span><b>Location</b> Gyeonggi, South Korea</span>
+      <a href="mailto:rahimjon4753@gmail.com"><b>Email</b> rahimjon4753@gmail.com</a>
+      <a href="https://rahimjonkomiljonov.github.io/portfolio/"><b>Portfolio</b> rahimjonkomiljonov.github.io/portfolio</a>
+      <a href="https://github.com/rahimjonkomiljonov"><b>GitHub</b> github.com/rahimjonkomiljonov</a>
+      <a href="https://www.linkedin.com/in/rahimjon-komiljonov/"><b>LinkedIn</b> linkedin.com/in/rahimjon-komiljonov</a>
+    </div>
+  </header>
+
+  <h2>Summary</h2>
+  <p class="summary">Computer Engineering student at Gachon University with a strong interest in artificial intelligence, cybersecurity and software development. I build real-time computer-vision systems, full-stack web apps and cross-platform tools, from webcam attention analytics to a stock-portfolio widget for Windows and Android. Seeking internship and collaboration opportunities in AI, security and software engineering.</p>
+
+  <h2>Education</h2>
+  <div class="row"><strong>Gachon University</strong><span class="when">2024 &ndash; Present</span></div>
+  <div class="sub">Bachelor of Engineering, Computer Engineering &middot; South Korea</div>
+
+  <h2>Selected Projects</h2>
+
+  <div class="item">
+    <div class="row"><strong>Live Audience Attention Tracker</strong><span class="when">Aug &ndash; Sep 2026</span></div>
+    <div class="tech">Python &middot; MediaPipe &middot; OpenCV &middot; FastAPI &middot; WebSockets &middot; NumPy &middot; Pandas</div>
+    <ul>
+      <li>Real-time computer-vision system that labels each audience member as attentive, partially engaged or away, using 3D head pose (yaw/pitch) and eye-gaze blendshapes.</li>
+      <li>Live browser dashboard with engagement %, automatic camera calibration, CSV session logs and HTML reports with attention-dip detection.</li>
+      <li>Privacy-first design: stores only per-second aggregates, never video frames, face images or identities.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><strong>Finance Widget</strong> <span class="when">2026 &middot; open source (MIT)</span></div>
+    <div class="tech">Electron &middot; React &middot; TypeScript &middot; Kotlin &middot; Jetpack Compose &middot; WorkManager</div>
+    <ul>
+      <li>Stock-portfolio tracker for Windows and Android with allocation chart, gain/loss, USD/KRW toggle and a home-screen widget; all data stays on the device (no account, no server).</li>
+      <li>Fixed a currency bug that showed a KRW stock as a +37,765% gain by making every price carry its own currency; 56 unit tests on Android.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><strong>Audience Polling &amp; Q&amp;A</strong><span class="when">Jul &ndash; Aug 2026</span></div>
+    <div class="tech">Next.js 15 &middot; React 19 &middot; TypeScript &middot; Supabase (PostgreSQL) &middot; Tailwind CSS &middot; Plotly</div>
+    <ul>
+      <li>Real-time Slido-style polling: hosts launch polls and audiences vote by room code or QR code, with live charts and no page refreshes (Supabase Realtime).</li>
+      <li>Row Level Security separates host and audience privileges; Vercel Cron Jobs clean up stale rooms automatically.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><strong>Recipe Manager</strong><span class="when">2026</span></div>
+    <div class="tech">TypeScript &middot; Node.js &middot; Express &middot; SQLite &middot; Google Gemini API</div>
+    <ul>
+      <li>Converts recipe websites, YouTube videos and Instagram posts into structured, searchable recipes; Gemini&rsquo;s multimodal API reads videos directly, with JSON-LD/Microdata fallbacks and JSON-Schema-constrained output.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><strong>Overlap</strong> <span class="when">2026 &middot; overlap-vert.vercel.app</span></div>
+    <div class="tech">Next.js 16 &middot; TypeScript &middot; Vercel</div>
+    <ul><li>Korean-first, bilingual campus web app connecting students who already share a course, club or free hour; live on Vercel.</li></ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><strong>Blockchain Voting System</strong><span class="when">2025</span></div>
+    <div class="tech">Python &middot; Streamlit &middot; SQLAlchemy</div>
+    <ul><li>Voting platform with cryptographic vote verification and proof-of-work mining, admin panel, persistent storage, real-time analytics and PDF reports.</li></ul>
+  </div>
+
+  <h2>Technical Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>Python, TypeScript, JavaScript, Kotlin, Java, SQL, HTML &amp; CSS</dd>
+    <dt>AI &amp; Vision</dt><dd>MediaPipe, OpenCV, Google Gemini API, NumPy, Pandas</dd>
+    <dt>Web &amp; Mobile</dt><dd>Next.js, React, React Native, Expo, Tailwind CSS, Electron, Jetpack Compose</dd>
+    <dt>Backend &amp; Data</dt><dd>Node.js, Express, FastAPI, WebSockets, Supabase, PostgreSQL, SQLite, Streamlit</dd>
+    <dt>Tools</dt><dd>Git &amp; GitHub, GitHub Pages, Vercel</dd>
+  </dl>
+
+  <div class="two">
+    <div>
+      <h2>Certifications</h2>
+      <div class="cert"><strong>Claude Academy: Claude 101</strong> <span>&middot; Anthropic, Sep 2026</span></div>
+      <div class="cert"><strong>Google Cybersecurity Professional Certificate</strong> <span>&middot; Google / Coursera</span></div>
+      <div class="cert"><strong>Machine Learning A-Z: AI, Python &amp; R</strong> <span>&middot; SuperDataScience, Aug 2025</span></div>
+      <div class="cert"><strong>100 Days of Code: Python Pro Bootcamp</strong> <span>&middot; Udemy, May 2025</span></div>
+    </div>
+    <div>
+      <h2>Languages</h2>
+      <div class="cert"><strong>English</strong> <span>&middot; Native / bilingual</span></div>
+      <div class="cert"><strong>Uzbek</strong> <span>&middot; Native / bilingual</span></div>
+      <div class="cert"><strong>Korean</strong> <span>&middot; Limited working</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
