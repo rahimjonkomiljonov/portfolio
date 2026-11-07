@@ -82,6 +82,25 @@
     }
   };
 
+  /* Full demos shown inside the project dialog */
+  var MEDIA = {
+    tracker: { src: 'images/media/tracker.mp4', poster: 'images/media/tracker-poster.jpg', w: 1280, h: 574,
+      label: 'Screen recording of the attention tracker dashboard',
+      caption: 'Real screen recording: engagement climbs and drops as I look at or away from the camera, then the session report with its engagement timeline.' },
+    recipe: { src: 'images/media/recipe.mp4', poster: 'images/media/recipe-poster.jpg', w: 1280, h: 578,
+      label: 'Screen recording of the Recipe Manager extracting a recipe from a YouTube link',
+      caption: 'Real screen recording with the waiting time sped up: paste a YouTube link, Gemini reads the video, and a structured recipe is saved to the collection.' },
+    finance: { src: 'images/media/finance.mp4', poster: 'images/media/finance-poster.jpg', w: 1280, h: 720,
+      label: 'Promo video of the Finance Widget on Android and Windows',
+      caption: 'Promo video for the project (it has sound). The widget shows the change since yesterday’s close, and the same portfolio opens on desktop and phone.' },
+    polling: { src: 'images/media/polling.mp4', poster: 'images/media/polling-poster.jpg', w: 800, h: 364,
+      label: 'Walkthrough of the polling app screens',
+      caption: 'Captured from the app running on my laptop: the home screen, hosting a room, entering a room title, and joining with a room code.' },
+    voting: { src: 'images/media/voting.mp4', poster: 'images/media/voting-poster.jpg', w: 920, h: 418,
+      label: 'Walkthrough of the blockchain voting system',
+      caption: 'Captured from the app running on my laptop with a sample election: the results chart, the mining screen, and the blockchain explorer confirming the chain is valid.' }
+  };
+
   var SKILLS = {
     'Python': ['My first language and still my default. From 100 Days of Code to computer vision and a blockchain voting system.', ['tracker', 'voting']],
     'TypeScript': ['My choice for anything with a UI or an API, so bugs show up before users do.', ['overlap', 'polling', 'finance', 'recipe']],
@@ -177,7 +196,13 @@
     var p = PROJECTS[id];
     if (!p || !dlg || !body) return;
     var h = '';
-    if (p.image) h += '<img class="pd-img" src="' + p.image + '" alt="' + esc(p.alt) + '" width="1280" height="760">';
+    var m = MEDIA[id];
+    if (m) {
+      h += '<video class="pd-video" controls playsinline preload="metadata" poster="' + m.poster + '" width="' + m.w + '" height="' + m.h + '" aria-label="' + esc(m.label) + '"><source src="' + m.src + '" type="video/mp4"></video>';
+      h += '<p class="pd-caption">' + esc(m.caption) + '</p>';
+    } else if (p.image) {
+      h += '<img class="pd-img" src="' + p.image + '" alt="' + esc(p.alt) + '" width="1280" height="760">';
+    }
     h += '<p class="pd-kind">' + esc(p.kind) + ' · ' + esc(p.period) + '</p>';
     h += '<h2 id="pd-title">' + esc(p.title) + '</h2><p class="pd-summary">' + esc(p.summary) + '</p>';
     h += '<h3 class="pd-h">Highlights</h3><ul class="pd-list">' + p.points.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
@@ -199,7 +224,29 @@
     var close = function () { if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); };
     $('#pd-close').addEventListener('click', close);
     dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); }); // backdrop click
-    dlg.addEventListener('close', function () { document.documentElement.classList.remove('modal-open'); });
+    dlg.addEventListener('close', function () {
+      document.documentElement.classList.remove('modal-open');
+      body.innerHTML = ''; // drops any playing video so it stops downloading
+    });
+  }
+
+  /* ======================= CARD VIDEO PREVIEWS ======================= */
+  var vids = $$('.art video');
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (vids.length && !reduced && 'IntersectionObserver' in window) {
+    var vo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting) {
+          if (!v.getAttribute('src') && v.dataset.src) v.src = v.dataset.src; // load lazily
+          var pr = v.play();
+          if (pr && pr.catch) pr.catch(function () { /* autoplay blocked: poster stays */ });
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    vids.forEach(function (v) { vo.observe(v); });
   }
 
   /* ======================= TERMINAL ======================= */

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap">
-  <link rel="stylesheet" href="./style.css?v=4">
+  <link rel="stylesheet" href="./style.css?v=5">
   <script>
     /* Set the theme before first paint (no flash). Dark by default. */
     (function () {
@@ -254,10 +254,10 @@
         <div class="project-grid">
           <article class="project reveal" data-category="ai python" data-tilt>
             <span class="glare" aria-hidden="true"></span>
-            <div class="art art-code" aria-hidden="true"><div class="art-bar"><i></i><i></i><i></i><span>attention_tracker.py</span></div><pre>yaw, pitch = head_pose(face)
-gaze_ok = eyes_on_screen(blend)
-state = "attentive" if gaze_ok
-        else "looking away"</pre></div>
+            <div class="art art-video" data-open="tracker">
+              <video muted loop playsinline preload="none" poster="images/media/tracker-poster.jpg" data-src="images/media/tracker-loop.mp4" aria-label="Looping preview of the attention tracker dashboard: a webcam feed with a face box labelled attentive, partial or away, and a live engagement percentage"></video>
+              <span class="art-badge" aria-hidden="true">&#9654; Live demo</span>
+            </div>
             <p class="tag">AI &middot; Computer vision</p>
             <h3>Live Audience Attention Tracker</h3>
             <p>Watches webcam video of an audience and labels each person attentive, partially engaged or looking away, using head pose and eye gaze. Privacy-first: no frames or identities stored.</p>
@@ -267,7 +267,7 @@ state = "attentive" if gaze_ok
 
           <article class="project reveal" data-delay="80" data-category="web" data-tilt>
             <span class="glare" aria-hidden="true"></span>
-            <div class="art art-shot"><img src="images/overlap.jpg" width="1280" height="760" loading="lazy" alt="Screenshot of the Overlap landing page with the headline &quot;You already overlap.&quot;"></div>
+            <div class="art art-shot" data-open="overlap"><img src="images/overlap.jpg" width="1280" height="760" loading="lazy" alt="Screenshot of the Overlap landing page with the headline &quot;You already overlap.&quot;"><span class="art-badge" aria-hidden="true">Live site</span></div>
             <p class="tag">Web &middot; Full-stack</p>
             <h3>Overlap</h3>
             <p>A Korean-first campus app built on one idea: you already overlap with people on your campus. Same course, same club, free the same hour.</p>
@@ -277,10 +277,10 @@ state = "attentive" if gaze_ok
 
           <article class="project reveal" data-delay="160" data-category="web" data-tilt>
             <span class="glare" aria-hidden="true"></span>
-            <div class="art art-code" aria-hidden="true"><div class="art-bar"><i></i><i></i><i></i><span>polls/realtime.ts</span></div><pre>supabase
-  .channel(room.code)
-  .on("postgres_changes", draw)
-  .subscribe()</pre></div>
+            <div class="art art-video" data-open="polling">
+              <video muted loop playsinline preload="none" poster="images/media/polling-poster.jpg" data-src="images/media/polling-loop.mp4" aria-label="Looping walkthrough of the polling app: the home screen, hosting a room, typing a room title and the join-by-code screen"></video>
+              <span class="art-badge" aria-hidden="true">&#9654; Walkthrough</span>
+            </div>
             <p class="tag">Web &middot; Realtime</p>
             <h3>Audience Polling &amp; Q&amp;A</h3>
             <p>A Slido-style platform: hosts launch polls and the audience votes by room code or QR code, with live charts and no page refreshes.</p>
@@ -290,10 +290,10 @@ state = "attentive" if gaze_ok
 
           <article class="project reveal" data-category="apps" data-tilt>
             <span class="glare" aria-hidden="true"></span>
-            <div class="art art-code" aria-hidden="true"><div class="art-bar"><i></i><i></i><i></i><span>Holding.kt</span></div><pre>val value = when (price.currency) {
-  "KRW" -> price.amount
-  else  -> price.amount * usdKrw
-} ?: return "&mdash;"</pre></div>
+            <div class="art art-video" data-open="finance">
+              <video muted loop playsinline preload="none" poster="images/media/finance-poster.jpg" data-src="images/media/finance-loop.mp4" aria-label="Looping promo of the Finance Widget: an Android home-screen widget with stock prices, a USD to KRW toggle, and the desktop app"></video>
+              <span class="art-badge" aria-hidden="true">&#9654; Promo</span>
+            </div>
             <p class="tag">Desktop &middot; Mobile</p>
             <h3>Finance Widget</h3>
             <p>A stock-portfolio tracker for Windows and Android with allocation charts, gain/loss, a USD/KRW toggle and a home-screen widget. No account, no server.</p>
@@ -303,9 +303,10 @@ state = "attentive" if gaze_ok
 
           <article class="project reveal" data-delay="80" data-category="ai web" data-tilt>
             <span class="glare" aria-hidden="true"></span>
-            <div class="art art-code" aria-hidden="true"><div class="art-bar"><i></i><i></i><i></i><span>extract.ts</span></div><pre>recipe = jsonLd(page)
-  ?? microdata(page)
-  ?? await gemini.watch(video, schema)</pre></div>
+            <div class="art art-video" data-open="recipe">
+              <video muted loop playsinline preload="none" poster="images/media/recipe-poster.jpg" data-src="images/media/recipe-loop.mp4" aria-label="Looping preview of the Recipe Manager: pasting a YouTube link, extracting, and the structured recipe that results"></video>
+              <span class="art-badge" aria-hidden="true">&#9654; Live demo</span>
+            </div>
             <p class="tag">AI &middot; Web</p>
             <h3>Recipe Manager</h3>
             <p>Turns recipe websites, YouTube videos and Instagram posts into structured, searchable recipes. Gemini watches the video directly.</p>
@@ -315,10 +316,10 @@ state = "attentive" if gaze_ok
 
           <article class="project reveal" data-delay="160" data-category="python" data-tilt>
             <span class="glare" aria-hidden="true"></span>
-            <div class="art art-code" aria-hidden="true"><div class="art-bar"><i></i><i></i><i></i><span>blockchain.py</span></div><pre>block.hash = sha256(
-    prev.hash + vote.digest
-)
-assert chain.is_valid()</pre></div>
+            <div class="art art-video" data-open="voting">
+              <video muted loop playsinline preload="none" poster="images/media/voting-poster.jpg" data-src="images/media/voting-loop.mp4" aria-label="Looping walkthrough of the voting system: an election dashboard with a vote chart, the mining screen and the blockchain explorer"></video>
+              <span class="art-badge" aria-hidden="true">&#9654; Walkthrough</span>
+            </div>
             <p class="tag">Python &middot; Security</p>
             <h3>Blockchain Voting System</h3>
             <p>A voting platform with cryptographic vote verification, an admin panel, persistent storage, live analytics and PDF reports.</p>
@@ -362,8 +363,8 @@ assert chain.is_valid()</pre></div>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="./js/theme.js?v=4" defer></script>
-  <script src="./js/effects.js?v=4" defer></script>
-  <script src="./js/explorer.js?v=4" defer></script>
+  <script src="./js/theme.js?v=5" defer></script>
+  <script src="./js/effects.js?v=5" defer></script>
+  <script src="./js/explorer.js?v=5" defer></script>
 </body>
 </html>

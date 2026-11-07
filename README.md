@@ -12,7 +12,7 @@ Personal portfolio built for K0126002 (Gachon University, 2026 Fall).
   - Dark/light mode toggle (icon-only, remembers your choice)
   - Reactive network background in the hero that responds to the cursor
   - Skill explorer: click a skill to see which projects used it
-  - Project filter and detail dialogs
+  - Project filter, plus detail dialogs with real demo videos
   - Interactive profile terminal, expandable certificate cards with 3D tilt
   - Scroll reveal, scroll progress bar, animated counters, copy-email button
 - Accessibility: skip link, visible focus styles, descriptive alt text, WCAG AA contrast in both themes, `prefers-reduced-motion` support, keyboard-operable dialogs
@@ -30,6 +30,7 @@ portfolio/
     effects.js    <- hero canvas, reveal, tilt, counters, nav
     explorer.js   <- skills, projects, terminal, certificates
   images/
+    media/        <- compressed demo videos, loops and posters
 ```
 
 ## Run locally
