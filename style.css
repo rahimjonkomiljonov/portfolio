@@ -58,8 +58,6 @@ a:hover { text-decoration-thickness: 2px; }
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
-.brand { font-family: var(--mono); font-weight: 700; font-size: 1.35rem; color: var(--ink); text-decoration: none; }
-.brand span { color: var(--accent); }
 .nav-list { display: flex; gap: .25rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
 .nav-list a {
   display: inline-block; padding: .5rem .8rem; border-radius: 999px;
@@ -68,7 +66,7 @@ a:hover { text-decoration-thickness: 2px; }
 .nav-list a:hover { background: var(--accent-soft); }
 
 /* ---------- Layout ---------- */
-main > section { padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 3rem); max-width: 1120px; margin: 0 auto; }
+main section { padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 3rem); max-width: 1120px; margin: 0 auto; }
 h1, h2, h3 { line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .6rem; }
 h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .eyebrow { font-family: var(--mono); color: var(--accent); font-weight: 600; margin: 0 0 .5rem; }
@@ -117,11 +115,23 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: .8rem 0 0; }
 .chips li { background: var(--accent-soft); color: var(--ink); padding: .25rem .75rem; border-radius: 999px; font-size: .92rem; font-weight: 500; }
 
-.subhead { margin-top: 2.5rem; font-size: 1.4rem; }
-.cert-list { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 1rem; }
-.cert-list li { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 1rem 1.2rem; }
-.cert-list strong { display: block; }
-.cert-list span { color: var(--muted); font-size: .92rem; }
+/* ---------- Certifications (full-width accent band) ---------- */
+.band { background: var(--accent); color: var(--accent-ink); }
+.band .eyebrow, .band h2, .band .section-intro { color: var(--accent-ink); }
+.band .section-intro { opacity: .92; }
+.band :focus-visible { outline-color: var(--accent-ink); }
+.cert-grid { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 1.2rem; }
+.cert {
+  display: flex; flex-direction: column; background: var(--surface); color: var(--ink);
+  border-radius: var(--radius); padding: 1.6rem; box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+  transition: transform .2s ease;
+}
+.cert:hover { transform: translateY(-5px); }
+.cert-badge { color: var(--accent); margin-bottom: 1rem; }
+.cert-issuer { font-family: var(--mono); font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin: 0 0 .4rem; }
+.cert h3 { font-size: 1.2rem; margin-bottom: .5rem; }
+.cert-meta { color: var(--muted); font-size: .95rem; margin: 0 0 1rem; }
+.cert-verify { margin-top: auto; font-weight: 600; }
 
 /* ---------- Projects ---------- */
 .section-intro { color: var(--muted); max-width: 60ch; }
@@ -173,18 +183,19 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
   .about-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .site-header { position: static; flex-wrap: wrap; justify-content: center; }
+  .site-header { position: static; }
   .nav-list a { padding: .45rem .6rem; }
   .project-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- Theme toggle ---------- */
+/* Quiet, icon-only: deliberately low-key so it never competes with the content */
 .theme-toggle {
-  font: inherit; font-weight: 600; cursor: pointer; color: var(--ink);
-  background: var(--surface); border: 2px solid var(--line);
-  padding: .4rem .9rem; border-radius: 999px; display: inline-flex; gap: .4rem; align-items: center;
+  font: inherit; font-size: 1.1rem; line-height: 1; cursor: pointer; color: var(--muted);
+  background: transparent; border: 0; width: 2.4rem; height: 2.4rem;
+  border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
 }
-.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle:hover { color: var(--ink); background: var(--accent-soft); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
