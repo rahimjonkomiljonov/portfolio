@@ -66,7 +66,14 @@
   if ('IntersectionObserver' in window && !reduced) {
     var revObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('in'); revObs.unobserve(en.target); }
+        if (en.isIntersecting) {
+          var el = en.target, wait = parseInt(el.dataset.delay || '0', 10);
+          el.classList.add('in');
+          revObs.unobserve(el);
+          // Clear the stagger delay once the reveal is done; otherwise it keeps
+          // delaying later transitions (like the hover tilt) on delayed cards.
+          setTimeout(function () { el.style.transitionDelay = ''; }, wait + 1000);
+        }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function (el, i) {
