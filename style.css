@@ -117,6 +117,12 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: .8rem 0 0; }
 .chips li { background: var(--accent-soft); color: var(--ink); padding: .25rem .75rem; border-radius: 999px; font-size: .92rem; font-weight: 500; }
 
+.subhead { margin-top: 2.5rem; font-size: 1.4rem; }
+.cert-list { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 1rem; }
+.cert-list li { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 1rem 1.2rem; }
+.cert-list strong { display: block; }
+.cert-list span { color: var(--muted); font-size: .92rem; }
+
 /* ---------- Projects ---------- */
 .section-intro { color: var(--muted); max-width: 60ch; }
 .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0; }
@@ -141,6 +147,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .project .tag { font-family: var(--mono); font-size: .8rem; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: .4rem; }
 .project .chips { margin-top: auto; padding-top: .4rem; }
 .links { margin-top: 1.1rem; font-weight: 600; }
+.note { color: var(--muted); font-weight: 500; font-style: italic; }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
