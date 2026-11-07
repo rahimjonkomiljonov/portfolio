@@ -82,6 +82,71 @@
       </div>
     </section>
 
+    <section id="projects" aria-labelledby="projects-title">
+      <p class="eyebrow">03 / Projects</p>
+      <h2 id="projects-title">Selected work</h2>
+      <p class="section-intro">A few of the things I'm proudest of. Every card links to the source or a live demo.</p>
+
+      <div class="filters" role="group" aria-label="Filter projects by category">
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
+        <button type="button" class="filter" data-filter="python" aria-pressed="false">Python</button>
+        <button type="button" class="filter" data-filter="apps" aria-pressed="false">Desktop &amp; Mobile</button>
+        <button type="button" class="filter" data-filter="data" aria-pressed="false">Data</button>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <article class="project" data-category="web">
+          <p class="tag">Web &middot; Full-stack</p>
+          <h3>Overlap</h3>
+          <p>A Korean-first campus dating web app built with Next.js 16. Live in production on Vercel. The source repository is private, so the demo is the best way to see it.</p>
+          <ul class="chips"><li>Next.js 16</li><li>TypeScript</li><li>Vercel</li></ul>
+          <div class="links"><a href="https://overlap-vert.vercel.app" target="_blank" rel="noopener">Live demo<span class="sr-only"> of Overlap (opens in a new tab)</span></a></div>
+        </article>
+
+        <article class="project" data-category="apps">
+          <p class="tag">Desktop &middot; Mobile</p>
+          <h3>Finance Widget</h3>
+          <p>A stock-portfolio widget for Windows (Electron + React) and Android (Kotlin + Jetpack Compose). Tracks holdings, shows allocation and gain/loss, and switches between USD and KRW.</p>
+          <ul class="chips"><li>Electron</li><li>React</li><li>Kotlin</li><li>Compose</li></ul>
+          <div class="links"><a href="https://github.com/rahimjonkomiljonov/finance-widget" target="_blank" rel="noopener">View code<span class="sr-only"> for Finance Widget on GitHub (opens in a new tab)</span></a></div>
+        </article>
+
+        <article class="project" data-category="web">
+          <p class="tag">Web &middot; Realtime</p>
+          <h3>Audience Polling</h3>
+          <p>A live polling and Q&amp;A platform in the spirit of Slido. Hosts launch polls, audiences join by room code or QR code, and results update in real time. Runs on free tiers.</p>
+          <ul class="chips"><li>Next.js 15</li><li>Supabase</li><li>Tailwind</li><li>Plotly</li></ul>
+          <div class="links"><a href="https://github.com/rahimjonkomiljonov/audience-polling" target="_blank" rel="noopener">View code<span class="sr-only"> for Audience Polling on GitHub (opens in a new tab)</span></a></div>
+        </article>
+
+        <article class="project" data-category="python">
+          <p class="tag">Python &middot; Security</p>
+          <h3>Blockchain Voting System</h3>
+          <p>An enterprise-style voting platform with cryptographic vote verification, an admin panel, persistent storage, live analytics and PDF reports.</p>
+          <ul class="chips"><li>Python</li><li>Streamlit</li><li>SQLAlchemy</li></ul>
+          <div class="links"><a href="https://github.com/rahimjonkomiljonov/Enterprise-Blockchain-Voting-System" target="_blank" rel="noopener">View code<span class="sr-only"> for Blockchain Voting System on GitHub (opens in a new tab)</span></a></div>
+        </article>
+
+        <article class="project" data-category="data python">
+          <p class="tag">Data &middot; Python</p>
+          <h3>Book-Crossing Analysis</h3>
+          <p>Exploratory data analysis of 278,858 users, 271,379 books and 1,149,780 ratings: who the readers are, what is popular, and how people rate.</p>
+          <ul class="chips"><li>Python</li><li>Pandas</li><li>Jupyter</li></ul>
+          <div class="links"><a href="https://github.com/rahimjonkomiljonov/Book-review-analysis" target="_blank" rel="noopener">View notebook<span class="sr-only"> for Book-Crossing Analysis on GitHub (opens in a new tab)</span></a></div>
+        </article>
+
+        <article class="project" data-category="apps">
+          <p class="tag">Mobile</p>
+          <h3>Expiry Manager</h3>
+          <p>A cross-platform mobile app that tracks expiry dates so food and household items don't go to waste. Backed by Supabase.</p>
+          <ul class="chips"><li>React Native</li><li>Expo</li><li>Supabase</li></ul>
+          <div class="links"><a href="https://github.com/rahimjonkomiljonov/ExpiryManager" target="_blank" rel="noopener">View code<span class="sr-only"> for Expiry Manager on GitHub (opens in a new tab)</span></a></div>
+        </article>
+      </div>
+      <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
+    </section>
+
     <!--NEXT-->
   </main>
 
