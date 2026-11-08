@@ -37,7 +37,8 @@
         'Logs sessions to CSV and generates an HTML report with an engagement timeline and attention-dip detection.',
         'Privacy-first: it never stores video frames, face images or identities, only per-second aggregates.'
       ],
-      stack: ['Python', 'MediaPipe', 'OpenCV', 'FastAPI', 'WebSockets', 'NumPy', 'Pandas'], links: [], private: true
+      stack: ['Python', 'MediaPipe', 'OpenCV', 'FastAPI', 'WebSockets', 'NumPy', 'Pandas'],
+      links: [{ label: 'View code on GitHub', url: 'https://github.com/rahimjonkomiljonov/live-audience-attention-tracker' }]
     },
     overlap: {
       title: 'Overlap', kind: 'Web · Full-stack', period: '2026',
