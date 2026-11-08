@@ -86,7 +86,8 @@
         'When Instagram blocks scraping, it falls back to a manual paste.',
         'Model output is constrained with a JSON Schema so every recipe has the same shape.'
       ],
-      stack: ['TypeScript', 'Node.js', 'Express', 'SQLite', 'Gemini API', 'Cheerio'], links: [], private: true
+      stack: ['TypeScript', 'Node.js', 'Express', 'SQLite', 'Gemini API', 'Cheerio'],
+      links: [{ label: 'View code on GitHub', url: 'https://github.com/rahimjonkomiljonov/recipe-from-url' }]
     },
     voting: {
       title: 'Blockchain Voting System', kind: 'Python · Security', period: '2025',
