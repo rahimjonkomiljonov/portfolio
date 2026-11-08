@@ -119,6 +119,7 @@
           <li class="reveal" data-delay="120"><time>Aug 2025</time><div><strong>Machine Learning A-Z</strong><span>AI, Python &amp; R certification</span></div></li>
           <li class="reveal" data-delay="180"><time>Jul &ndash; Sep 2026</time><div><strong>Shipped real-time systems</strong><span>Audience Polling, then the Live Attention Tracker</span></div></li>
           <li class="reveal" data-delay="240"><time>Sep 2026</time><div><strong>Claude Academy: Claude 101</strong><span>Anthropic certification</span></div></li>
+          <li class="reveal" data-delay="240"><time>Nov 2026</time><div><strong>Built ClearKo</strong><span>An app that explains Korean documents in Uzbek, Russian and English</span></div></li>
         </ol>
       </div>
     </section>
@@ -262,7 +263,20 @@
         </div>
 
         <div class="project-grid">
-          <article class="project reveal" data-category="ai python" data-tilt>
+
+          <article class="project reveal" data-category="ai web python" data-tilt>
+            <span class="glare" aria-hidden="true"></span>
+            <div class="art art-video" data-open="clearko">
+              <video muted loop playsinline preload="none" poster="images/media/clearko-poster.jpg" data-src="images/media/clearko-loop.mp4" aria-label="Looping preview of ClearKo: a phone screen showing the red flags found in a Korean part-time contract, each with the original Korean text and a plain explanation"></video>
+              <span class="art-badge" aria-hidden="true">&#9654; Demo</span>
+            </div>
+            <p class="tag">AI &middot; Document understanding</p>
+            <h3>ClearKo</h3>
+            <p>Photograph a Korean contract and get it explained in Uzbek, Russian or English: key facts, red flags that quote the original Korean, and what to do next. Measured against a plain-prompt baseline.</p>
+            <ul class="chips"><li>Python</li><li>FastAPI</li><li>OpenCV</li><li>Next.js</li></ul>
+            <div class="card-actions"><button type="button" class="btn btn-small" data-open="clearko">Details<span class="sr-only"> about ClearKo</span></button><a class="text-link" href="https://github.com/rahimjonkomiljonov/clearko" target="_blank" rel="noopener">Code<span class="sr-only"> for ClearKo (opens in a new tab)</span></a></div>
+          </article>
+          <article class="project reveal" data-delay="80" data-category="ai python" data-tilt>
             <span class="glare" aria-hidden="true"></span>
             <div class="art art-video" data-open="tracker">
               <video muted loop playsinline preload="none" poster="images/media/tracker-poster.jpg" data-src="images/media/tracker-loop.mp4" aria-label="Looping preview of the attention tracker dashboard: a webcam feed with a face box labelled attentive, partial or away, and a live engagement percentage"></video>
@@ -275,7 +289,7 @@
             <div class="card-actions"><button type="button" class="btn btn-small" data-open="tracker">Details<span class="sr-only"> about Live Audience Attention Tracker</span></button><span class="note">Source is private</span></div>
           </article>
 
-          <article class="project reveal" data-delay="80" data-category="web" data-tilt>
+          <article class="project reveal" data-delay="160" data-category="web" data-tilt>
             <span class="glare" aria-hidden="true"></span>
             <div class="art art-shot" data-open="overlap"><img src="images/overlap.jpg" width="1280" height="760" loading="lazy" alt="Screenshot of the Overlap landing page with the headline &quot;You already overlap.&quot;"><span class="art-badge" aria-hidden="true">Live site</span></div>
             <p class="tag">Web &middot; Full-stack</p>
@@ -285,7 +299,7 @@
             <div class="card-actions"><button type="button" class="btn btn-small" data-open="overlap">Details<span class="sr-only"> about Overlap</span></button><a class="text-link" href="https://overlap-vert.vercel.app" target="_blank" rel="noopener">Live site<span class="sr-only"> (opens in a new tab)</span></a></div>
           </article>
 
-          <article class="project reveal" data-delay="160" data-category="web" data-tilt>
+          <article class="project reveal" data-category="web" data-tilt>
             <span class="glare" aria-hidden="true"></span>
             <div class="art art-video" data-open="polling">
               <video muted loop playsinline preload="none" poster="images/media/polling-poster.jpg" data-src="images/media/polling-loop.mp4" aria-label="Looping walkthrough of the polling app: the home screen, hosting a room, typing a room title and the join-by-code screen"></video>
@@ -298,7 +312,7 @@
             <div class="card-actions"><button type="button" class="btn btn-small" data-open="polling">Details<span class="sr-only"> about Audience Polling</span></button><a class="text-link" href="https://github.com/rahimjonkomiljonov/audience-polling" target="_blank" rel="noopener">Code<span class="sr-only"> for Audience Polling (opens in a new tab)</span></a></div>
           </article>
 
-          <article class="project reveal" data-category="apps" data-tilt>
+          <article class="project reveal" data-delay="80" data-category="apps" data-tilt>
             <span class="glare" aria-hidden="true"></span>
             <div class="art art-video" data-open="finance">
               <video muted loop playsinline preload="none" poster="images/media/finance-poster.jpg" data-src="images/media/finance-loop.mp4" aria-label="Looping promo of the Finance Widget: an Android home-screen widget with stock prices, a USD to KRW toggle, and the desktop app"></video>
@@ -311,7 +325,7 @@
             <div class="card-actions"><button type="button" class="btn btn-small" data-open="finance">Details<span class="sr-only"> about Finance Widget</span></button><a class="text-link" href="https://github.com/rahimjonkomiljonov/finance-widget" target="_blank" rel="noopener">Code<span class="sr-only"> for Finance Widget (opens in a new tab)</span></a></div>
           </article>
 
-          <article class="project reveal" data-delay="80" data-category="ai web" data-tilt>
+          <article class="project reveal" data-delay="160" data-category="ai web" data-tilt>
             <span class="glare" aria-hidden="true"></span>
             <div class="art art-video" data-open="recipe">
               <video muted loop playsinline preload="none" poster="images/media/recipe-poster.jpg" data-src="images/media/recipe-loop.mp4" aria-label="Looping preview of the Recipe Manager: pasting a YouTube link, extracting, and the structured recipe that results"></video>
@@ -322,19 +336,6 @@
             <p>Turns recipe websites, YouTube videos and Instagram posts into structured, searchable recipes. Gemini watches the video directly.</p>
             <ul class="chips"><li>TypeScript</li><li>Node.js</li><li>Gemini API</li><li>SQLite</li></ul>
             <div class="card-actions"><button type="button" class="btn btn-small" data-open="recipe">Details<span class="sr-only"> about Recipe Manager</span></button><span class="note">Source is private</span></div>
-          </article>
-
-          <article class="project reveal" data-delay="160" data-category="python" data-tilt>
-            <span class="glare" aria-hidden="true"></span>
-            <div class="art art-video" data-open="voting">
-              <video muted loop playsinline preload="none" poster="images/media/voting-poster.jpg" data-src="images/media/voting-loop.mp4" aria-label="Looping walkthrough of the voting system: an election dashboard with a vote chart, the mining screen and the blockchain explorer"></video>
-              <span class="art-badge" aria-hidden="true">&#9654; Walkthrough</span>
-            </div>
-            <p class="tag">Python &middot; Security</p>
-            <h3>Blockchain Voting System</h3>
-            <p>A voting platform with cryptographic vote verification, an admin panel, persistent storage, live analytics and PDF reports.</p>
-            <ul class="chips"><li>Python</li><li>Streamlit</li><li>SQLAlchemy</li></ul>
-            <div class="card-actions"><button type="button" class="btn btn-small" data-open="voting">Details<span class="sr-only"> about Blockchain Voting System</span></button><a class="text-link" href="https://github.com/rahimjonkomiljonov/Enterprise-Blockchain-Voting-System" target="_blank" rel="noopener">Code<span class="sr-only"> for Blockchain Voting System (opens in a new tab)</span></a></div>
           </article>
         </div>
         <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>

@@ -7,6 +7,25 @@
 
   /* ======================= DATA ======================= */
   var PROJECTS = {
+    clearko: {
+      title: 'ClearKo', kind: 'AI · Document understanding', period: 'Nov 2026',
+      summary: 'A web app that explains Korean documents to people who cannot read them. Photograph a rental contract, phone plan or part-time job contract and ClearKo reads it and explains it in Uzbek, Russian or English: a summary, key facts, red flags that quote the original Korean, and a to-do list. It explains documents; it is not legal advice.',
+      points: [
+        'Pipeline: OpenCV preprocessing, PaddleOCR, then a local LLM (qwen2.5:7b through Ollama) that reviews every added clause by id, plus fixed rules such as the legal minimum wage.',
+        'Measured, not assumed: on 4 synthetic documents with 32 planted problems, ClearKo found 31 and a plain “explain this” prompt on the same model found 22.',
+        'Shows the scan’s own Korean text with every flag, and hides any quote it cannot find in the scan, so it never shows invented Korean.',
+        'Uzbek comes from NLLB-200 translating the English analysis, because the local models could not write usable Uzbek. A native Uzbek speaker still needs to review it.',
+        'Privacy-first: nothing is stored and the default model runs on my own machine, so documents never leave it.',
+        'Reading 8 pages takes about 3 seconds on the GPU and 6 to 15 minutes on the CPU. 160 backend tests and 10 frontend tests pass.',
+        'The demo frontend is on Vercel and its GPU backend runs on my own PC, so the live demo works only while that PC is on.'
+      ],
+      stack: ['Python', 'FastAPI', 'OpenCV', 'PaddleOCR', 'Ollama', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      links: [
+        { label: 'View code on GitHub', url: 'https://github.com/rahimjonkomiljonov/clearko' },
+        { label: 'Read the case study', url: 'https://github.com/rahimjonkomiljonov/clearko/blob/main/docs/case-study.md' },
+        { label: 'Open live demo', url: 'https://clearko-ras-5e26.vercel.app' }
+      ]
+    },
     tracker: {
       title: 'Live Audience Attention Tracker', kind: 'AI · Computer vision', period: 'Aug – Sep 2026',
       summary: 'A real-time computer-vision system that watches webcam video of an audience and labels each person as attentive, partially engaged or looking away, based on head pose and eye gaze.',
@@ -84,6 +103,9 @@
 
   /* Full demos shown inside the project dialog */
   var MEDIA = {
+    clearko: { src: 'images/media/clearko.mp4', poster: 'images/media/clearko-poster.jpg', w: 1280, h: 720,
+      label: '25-second demo of ClearKo: a Korean contract, the app, and the red flags with the original Korean quote',
+      caption: 'A 25-second demo (it has music: Sascha Ende, ende.app, CC BY 4.0). The 31 of 32 versus 22 of 32 result at the end comes from my own test on synthetic documents.' },
     tracker: { src: 'images/media/tracker.mp4', poster: 'images/media/tracker-poster.jpg', w: 1280, h: 574,
       label: 'Screen recording of the attention tracker dashboard',
       caption: 'Real screen recording: engagement climbs and drops as I look at or away from the camera, then the session report with its engagement timeline.' },
@@ -102,26 +124,26 @@
   };
 
   var SKILLS = {
-    'Python': ['My first language and still my default. From 100 Days of Code to computer vision and a blockchain voting system.', ['tracker', 'voting']],
-    'TypeScript': ['My choice for anything with a UI or an API, so bugs show up before users do.', ['overlap', 'polling', 'finance', 'recipe']],
+    'Python': ['My first language and still my default. From 100 Days of Code to computer vision and a blockchain voting system.', ['tracker', 'voting', 'clearko']],
+    'TypeScript': ['My choice for anything with a UI or an API, so bugs show up before users do.', ['overlap', 'polling', 'finance', 'recipe', 'clearko']],
     'JavaScript': ['Powers the interactions on this very portfolio, written without a framework.', ['polling']],
     'Kotlin': ['Native Android: the Finance Widget’s app and home-screen widget.', ['finance']],
     'Java': ['Android fundamentals from my Mobile Programming coursework.', []],
     'SQL': ['Schemas, migrations and Row Level Security policies in PostgreSQL.', ['polling']],
     'HTML & CSS': ['This portfolio uses semantic, responsive and accessible HTML and CSS.', []],
     'MediaPipe': ['Face landmarks, head pose and eye-gaze blendshapes for the attention tracker.', ['tracker']],
-    'OpenCV': ['Webcam capture and frame handling for real-time vision.', ['tracker']],
-    'Gemini API': ['Multimodal video understanding and schema-constrained output.', ['recipe']],
+    'OpenCV': ['Webcam capture and frame handling for real-time vision.', ['tracker', 'clearko']],
+    'Gemini API': ['Multimodal video understanding and schema-constrained output.', ['recipe', 'clearko']],
     'NumPy': ['The maths behind head pose and per-second aggregates.', ['tracker']],
     'Pandas': ['Session logs, reports and exploratory analysis (including the Book-Crossing dataset).', ['tracker']],
-    'Next.js': ['App Router apps with server and client components, deployed on Vercel.', ['overlap', 'polling']],
+    'Next.js': ['App Router apps with server and client components, deployed on Vercel.', ['overlap', 'polling', 'clearko']],
     'React': ['Component UIs for the web and for the Electron desktop app.', ['finance', 'polling']],
-    'Tailwind CSS': ['Fast, mobile-first styling for the polling app.', ['polling']],
+    'Tailwind CSS': ['Fast, mobile-first styling for the polling app.', ['polling', 'clearko']],
     'Electron': ['Windows desktop widget with tray icon and always-on-top mode.', ['finance']],
     'Jetpack Compose': ['Declarative Android UI for the Finance Widget.', ['finance']],
     'Node.js': ['Server-side TypeScript for the Recipe Manager.', ['recipe']],
     'Express': ['A small REST API that extracts and stores recipes.', ['recipe']],
-    'FastAPI': ['Serves the live attention dashboard and streams video.', ['tracker']],
+    'FastAPI': ['Serves the live attention dashboard and streams video.', ['tracker', 'clearko']],
     'WebSockets': ['Pushes live engagement numbers to the browser.', ['tracker']],
     'Supabase': ['Postgres, Realtime and Row Level Security on a free tier.', ['polling']],
     'PostgreSQL': ['The relational store behind live polls and Q&A.', ['polling']],
@@ -130,7 +152,7 @@
     'React Native': ['Cross-platform mobile apps with Expo, like my Expiry Manager, which tracks expiry dates.', []],
     'Expo': ['Builds, routing and on-device testing for my React Native apps.', []],
     'Git & GitHub': ['Every project here lives on GitHub, and this portfolio is deployed from it with GitHub Pages.', []],
-    'Vercel': ['Hosts Overlap, and runs the cron jobs that clean up stale polling rooms.', ['overlap', 'polling']]
+    'Vercel': ['Hosts Overlap, and runs the cron jobs that clean up stale polling rooms.', ['overlap', 'polling', 'clearko']]
   };
 
   /* Technology name -> icon id in the inline sprite (see index.html) */
@@ -155,7 +177,7 @@
     languages: 'English (native/bilingual) · Uzbek (native/bilingual) · Korean (limited working)',
     interests: 'Artificial intelligence, cybersecurity, Python, software development, problem solving.',
     goals: 'Become an engineer who builds innovative, reliable and secure solutions, and use AI to protect sensitive information from emerging digital threats.',
-    'ls projects': 'attention-tracker/  overlap/  audience-polling/  finance-widget/  recipe-manager/  blockchain-voting/'
+    'ls projects': 'clearko/  attention-tracker/  overlap/  audience-polling/  finance-widget/  recipe-manager/'
   };
 
   /* ======================= SKILL EXPLORER ======================= */
