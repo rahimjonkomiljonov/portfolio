@@ -36,8 +36,8 @@ export default function Skills() {
       <div className="skills-layout">
         <ul className="skill-chips reveal" aria-label="Skills">
           {SKILL_LIST.map(([name, cat, icon]) => (
-            <li key={name}>
-              <button type="button" className="skill-chip" hidden={category !== 'all' && category !== cat} aria-pressed={skill === name} onClick={() => pick(name)}>
+            <li key={name} hidden={category !== 'all' && category !== cat}>
+              <button type="button" className="skill-chip" aria-pressed={skill === name} onClick={() => pick(name)}>
                 <Icon id={icon} />
                 <span>{name}</span>
               </button>

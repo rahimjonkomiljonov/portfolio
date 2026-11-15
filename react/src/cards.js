@@ -75,6 +75,8 @@ export const SKILL_LIST = [
   ['Kotlin', 'lang', 'kotlin'], ['Java', 'lang', 'openjdk'], ['SQL', 'lang', 'sql'], ['HTML & CSS', 'lang', 'html5'],
   ['MediaPipe', 'ai', 'mediapipe'], ['OpenCV', 'ai', 'opencv'], ['Gemini API', 'ai', 'googlegemini'],
   ['NumPy', 'ai', 'numpy'], ['Pandas', 'ai', 'pandas'],
+  ['PyTorch', 'ai', 'pytorch'], ['Hugging Face', 'ai', 'huggingface'], ['Whisper', 'ai', 'whisper'],
+  ['Machine Learning', 'ai', 'ml'], ['NLP & Speech', 'ai', 'nlp'],
   ['Next.js', 'web', 'nextdotjs'], ['React', 'web', 'react'], ['React Native', 'web', 'react'], ['Expo', 'web', 'expo'],
   ['Tailwind CSS', 'web', 'tailwindcss'], ['Electron', 'web', 'electron'], ['Jetpack Compose', 'web', 'jetpackcompose'],
   ['Node.js', 'data', 'nodedotjs'], ['Express', 'data', 'express'], ['FastAPI', 'data', 'fastapi'],
@@ -84,5 +86,5 @@ export const SKILL_LIST = [
 ];
 
 export const SKILL_TABS = [
-  ['all', 'All'], ['lang', 'Languages'], ['ai', 'AI & Vision'], ['web', 'Web & Apps'], ['data', 'Backend & Data'], ['tools', 'Tools'],
+  ['all', 'All'], ['lang', 'Languages'], ['ai', 'AI & ML'], ['web', 'Web & Apps'], ['data', 'Backend & Data'], ['tools', 'Tools'],
 ];

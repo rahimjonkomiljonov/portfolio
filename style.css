@@ -355,6 +355,9 @@ p { margin: 0 0 1rem; }
 .i-express { --c: #0A0A0A; }
 .i-fastapi { --c: #009688; }
 .i-ws { --c: var(--accent); }
+.i-pytorch { --c: #EE4C2C; }
+.i-huggingface { --c: #FFD21E; }
+.i-whisper, .i-ml, .i-nlp, .i-ct2, .i-gradio { --c: var(--accent); }
 .i-supabase { --c: #3FCF8E; }
 .i-postgresql { --c: #4169E1; }
 .i-sqlite { --c: #003B57; }

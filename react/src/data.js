@@ -151,6 +151,11 @@ export const SKILLS = {
   'MediaPipe': ['Face landmarks, head pose and eye-gaze blendshapes for the attention tracker.', ['tracker']],
   'OpenCV': ['Webcam capture and frame handling for real-time vision.', ['tracker', 'clearko']],
   'Gemini API': ['Multimodal video understanding and schema-constrained output.', ['recipe', 'clearko']],
+  'PyTorch': ['Training and evaluating the fine-tuned Whisper models for Ovoz on one 8 GB graphics card.', ['ovoz']],
+  'Hugging Face': ['Transformers and PEFT for the LoRA fine-tuning, and the published Ovoz models on the Hub.', ['ovoz']],
+  'Whisper': ['OpenAI’s speech model, fine-tuned for Uzbek: 18.2 of every 100 words wrong on read speech, against 90.1 for the best untuned model.', ['ovoz']],
+  'Machine Learning': ['Fine-tuning with LoRA, comparing 13 training runs, spotting and reporting runs that diverged, and judging results with confidence intervals.', ['ovoz']],
+  'NLP & Speech': ['Uzbek speech recognition, a tested text normalizer, and error analysis by word type such as names, numbers and loanwords. ClearKo’s text pipeline (OCR, a language model, translation) is NLP too.', ['ovoz', 'clearko']],
   'NumPy': ['The maths behind head pose and per-second aggregates.', ['tracker']],
   'Pandas': ['Session logs, reports and exploratory analysis (including the Book-Crossing dataset).', ['tracker']],
   'Next.js': ['App Router apps with server and client components, deployed on Vercel.', ['overlap', 'polling', 'clearko']],
@@ -179,7 +184,7 @@ export const ICONS = {
   'Next.js': 'nextdotjs', 'Next.js 16': 'nextdotjs', 'Next.js 15': 'nextdotjs', 'React': 'react', 'React 19': 'react', 'React Native': 'react',
   'Expo': 'expo', 'Tailwind': 'tailwindcss', 'Tailwind CSS': 'tailwindcss', 'Electron': 'electron', 'Jetpack Compose': 'jetpackcompose', 'Compose': 'jetpackcompose',
   'Node.js': 'nodedotjs', 'Express': 'express', 'FastAPI': 'fastapi', 'WebSockets': 'ws', 'Supabase': 'supabase', 'PostgreSQL': 'postgresql',
-  'SQLite': 'sqlite', 'Streamlit': 'streamlit', 'Vercel': 'vercel', 'Plotly': 'plotly', 'SQLAlchemy': 'sqlalchemy', 'WorkManager': 'android', 'Cheerio': 'cheerio'
+  'SQLite': 'sqlite', 'Streamlit': 'streamlit', 'PyTorch': 'pytorch', 'Hugging Face': 'huggingface', 'Whisper': 'whisper', 'LoRA': 'ml', 'CTranslate2': 'ct2', 'Gradio': 'gradio', 'Machine Learning': 'ml', 'NLP & Speech': 'nlp', 'Vercel': 'vercel', 'Plotly': 'plotly', 'SQLAlchemy': 'sqlalchemy', 'WorkManager': 'android', 'Cheerio': 'cheerio'
 };
 /* Logos that are near-black (dark) or very light need the text colour on one theme */
-export const ICON_CLS = { 'javascript': 'ic-lt', 'openjdk': 'ic-dk', 'numpy': 'ic-dk', 'pandas': 'ic-dk', 'nextdotjs': 'ic-dk', 'react': 'ic-lt', 'expo': 'ic-dk', 'express': 'ic-dk', 'supabase': 'ic-lt', 'sqlite': 'ic-dk', 'vercel': 'ic-dk', 'android': 'ic-lt' };
+export const ICON_CLS = { 'javascript': 'ic-lt', 'openjdk': 'ic-dk', 'numpy': 'ic-dk', 'pandas': 'ic-dk', 'nextdotjs': 'ic-dk', 'react': 'ic-lt', 'expo': 'ic-dk', 'express': 'ic-dk', 'supabase': 'ic-lt', 'sqlite': 'ic-dk', 'vercel': 'ic-dk', 'android': 'ic-lt', 'huggingface': 'ic-lt' };
