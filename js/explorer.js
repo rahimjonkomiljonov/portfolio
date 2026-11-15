@@ -14,7 +14,7 @@
     languages: 'English (native/bilingual) · Uzbek (native/bilingual) · Korean (limited working)',
     interests: 'Artificial intelligence, cybersecurity, Python, software development, problem solving.',
     goals: 'Become an engineer who builds innovative, reliable and secure solutions, and use AI to protect sensitive information from emerging digital threats.',
-    'ls projects': 'clearko/  attention-tracker/  overlap/  audience-polling/  finance-widget/  recipe-manager/'
+    'ls projects': 'ovoz/  clearko/  attention-tracker/  overlap/  audience-polling/  finance-widget/  recipe-manager/'
   };
 
   /* ======================= TERMINAL ======================= */

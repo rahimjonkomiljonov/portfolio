@@ -1,7 +1,16 @@
 // What each project card on the page shows (the longer dialog text is in data.js).
 export const CARDS = [
   {
-    id: 'clearko', category: 'ai web python', delay: null,
+    id: 'ovoz', category: 'ai python', delay: null,
+    art: { type: 'image', src: 'images/ovoz-results.jpg', w: '1280', h: '582',
+      alt: 'Bar chart of word errors per 100 words. Read speech: untuned Whisper large-v3 90.1, fine-tuned small 23.8, fine-tuned medium 18.2. Conversation: untuned large-v3 104.2, fine-tuned medium 47.8.', badge: 'Results' },
+    tag: 'AI · Speech recognition', title: 'Ovoz',
+    desc: 'Fine-tunes Whisper for Uzbek speech. On read speech, 18 of 100 words wrong instead of 90 for the best untuned model; on real conversation it is still about 48, and the write-up says why.',
+    chips: ['Python', 'PyTorch', 'Whisper', 'Hugging Face'], detailsSr: ' about Ovoz',
+    link: { href: 'https://github.com/rahimjonkomiljonov/ovoz', text: 'Code', sr: ' for Ovoz (opens in a new tab)' },
+  },
+  {
+    id: 'clearko', category: 'ai web python', delay: '80',
     art: { type: 'video', poster: 'images/media/clearko-poster.jpg', src: 'images/media/clearko-loop.mp4',
       label: 'Looping preview of ClearKo: a phone screen showing the red flags found in a Korean part-time contract, each with the original Korean text and a plain explanation', badge: '▶ Demo' },
     tag: 'AI · Document understanding', title: 'ClearKo',
@@ -10,7 +19,7 @@ export const CARDS = [
     link: { href: 'https://github.com/rahimjonkomiljonov/clearko', text: 'Code', sr: ' for ClearKo (opens in a new tab)' },
   },
   {
-    id: 'tracker', category: 'ai python', delay: '80',
+    id: 'tracker', category: 'ai python', delay: '160',
     art: { type: 'video', poster: 'images/media/tracker-poster.jpg', src: 'images/media/tracker-loop.mp4',
       label: 'Looping preview of the attention tracker dashboard: a webcam feed with a face box labelled attentive, partial or away, and a live engagement percentage', badge: '▶ Live demo' },
     tag: 'AI · Computer vision', title: 'Live Audience Attention Tracker',
@@ -19,7 +28,7 @@ export const CARDS = [
     link: { href: 'https://github.com/rahimjonkomiljonov/live-audience-attention-tracker', text: 'Code', sr: ' for Live Audience Attention Tracker (opens in a new tab)' },
   },
   {
-    id: 'overlap', category: 'web', delay: '160',
+    id: 'overlap', category: 'web', delay: null,
     art: { type: 'image', src: 'images/overlap.jpg', w: '1280', h: '760',
       alt: 'Screenshot of the Overlap landing page with the headline "You already overlap."', badge: 'Live site' },
     tag: 'Web · Full-stack', title: 'Overlap',
@@ -28,7 +37,7 @@ export const CARDS = [
     link: { href: 'https://overlap-vert.vercel.app', text: 'Live site', sr: ' (opens in a new tab)' },
   },
   {
-    id: 'polling', category: 'web', delay: null,
+    id: 'polling', category: 'web', delay: '80',
     art: { type: 'video', poster: 'images/media/polling-poster.jpg', src: 'images/media/polling-loop.mp4',
       label: 'Looping walkthrough of the polling app: the home screen, hosting a room, typing a room title and the join-by-code screen', badge: '▶ Walkthrough' },
     tag: 'Web · Realtime', title: 'Audience Polling & Q&A',
@@ -37,7 +46,7 @@ export const CARDS = [
     link: { href: 'https://github.com/rahimjonkomiljonov/audience-polling', text: 'Code', sr: ' for Audience Polling (opens in a new tab)' },
   },
   {
-    id: 'finance', category: 'apps', delay: '80',
+    id: 'finance', category: 'apps', delay: '160',
     art: { type: 'video', poster: 'images/media/finance-poster.jpg', src: 'images/media/finance-loop.mp4',
       label: 'Looping promo of the Finance Widget: an Android home-screen widget with stock prices, a USD to KRW toggle, and the desktop app', badge: '▶ Promo' },
     tag: 'Desktop · Mobile', title: 'Finance Widget',
@@ -46,7 +55,7 @@ export const CARDS = [
     link: { href: 'https://github.com/rahimjonkomiljonov/finance-widget', text: 'Code', sr: ' for Finance Widget (opens in a new tab)' },
   },
   {
-    id: 'recipe', category: 'ai web', delay: '160',
+    id: 'recipe', category: 'ai web', delay: null,
     art: { type: 'video', poster: 'images/media/recipe-poster.jpg', src: 'images/media/recipe-loop.mp4',
       label: 'Looping preview of the Recipe Manager: pasting a YouTube link, extracting, and the structured recipe that results', badge: '▶ Live demo' },
     tag: 'AI · Web', title: 'Recipe Manager',

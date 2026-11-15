@@ -1,6 +1,27 @@
 // Data moved unchanged from js/explorer.js: the project details, media, skills and icon maps.
 /* ======================= DATA ======================= */
 export const PROJECTS = {
+  ovoz: {
+    title: 'Ovoz', kind: 'AI · Speech recognition', period: 'Nov 2026',
+    summary: 'How much better than off-the-shelf Whisper can fine-tuning get on Uzbek speech (Latin script), and where does it still fail? Ovoz is the data preparation, training, evaluation, export and demo code, plus the measured answers, with published models.',
+    points: [
+      'Baselines first: the best untuned model (Whisper large-v3) gets 90.1 of every 100 words wrong on the Common Voice test set. The best fine-tuned model (Whisper medium with LoRA) gets 18.2 wrong (95% interval 17.2 to 19.1), and 27.1 on FLEURS.',
+      'A harder test: 126 clips of unscripted talk recorded by 4 people with their consent. The best model gets 47.8 of 100 words wrong, with a wide interval (35 to 61) because there are only 4 speakers. 19% of the words never appeared in the training text, and the model missed 71% of those.',
+      'Compared 13 training runs: LoRA rank, full fine-tuning, 10 to 100% of the data and longer training. More data helped most (43, 34, 29 and 24 of 100 wrong at 10, 25, 50 and 100% of the data, on the small model). Moving from small to medium was the one big step.',
+      'Three runs diverged at the first learning rate. I reported them, reran at half the rate, and marked those reruns as not like-for-like.',
+      'Careful testing: speaker-disjoint splits, a text normalizer with unit tests (77 tests in total), and confidence intervals that resample whole speakers.',
+      'The exported medium model runs about 18 times faster than real time on an RTX 4060 Ti, and faster than real time on average on a CPU. A FastAPI backend and Gradio page keep audio in memory only.',
+      'Limits, stated in the write-up: the training data skews young and male, older speakers, women, accents and heavy noise were not tested, and every result comes from single runs on one computer.'
+    ],
+    stack: ['Python', 'PyTorch', 'Whisper', 'LoRA', 'Hugging Face', 'CTranslate2', 'FastAPI', 'Gradio'],
+    image: 'images/ovoz-results.jpg',
+    alt: 'Bar chart of word errors per 100 words. Read speech: untuned Whisper large-v3 90.1, fine-tuned small 23.8, fine-tuned medium 18.2. Conversation: untuned large-v3 104.2, fine-tuned medium 47.8.',
+    links: [
+      { label: 'View code on GitHub', url: 'https://github.com/rahimjonkomiljonov/ovoz' },
+      { label: 'Read the case study', url: 'https://github.com/rahimjonkomiljonov/ovoz/blob/master/docs/case_study.md' },
+      { label: 'Model on Hugging Face', url: 'https://huggingface.co/rahimjonkomiljonov/ovoz-whisper-medium-uz' }
+    ]
+  },
   clearko: {
     title: 'ClearKo', kind: 'AI · Document understanding', period: 'Nov 2026',
     summary: 'A web app that explains Korean documents to people who cannot read them. Photograph a rental contract, phone plan or part-time job contract and ClearKo reads it and explains it in Uzbek, Russian or English: a summary, key facts, red flags that quote the original Korean, and a to-do list. It explains documents; it is not legal advice.',
@@ -120,7 +141,7 @@ export const MEDIA = {
 };
 
 export const SKILLS = {
-  'Python': ['My first language and still my default. From 100 Days of Code to computer vision and a blockchain voting system.', ['tracker', 'voting', 'clearko']],
+  'Python': ['My first language and still my default. From 100 Days of Code to computer vision, a blockchain voting system and speech recognition.', ['ovoz', 'tracker', 'voting', 'clearko']],
   'TypeScript': ['My choice for anything with a UI or an API, so bugs show up before users do.', ['overlap', 'polling', 'finance', 'recipe', 'clearko']],
   'JavaScript': ['Powers the interactions on this very portfolio: plain JavaScript for the terminal and effects, and React for the skills and projects sections.', ['polling']],
   'Kotlin': ['Native Android: the Finance Widget’s app and home-screen widget.', ['finance']],
@@ -139,7 +160,7 @@ export const SKILLS = {
   'Jetpack Compose': ['Declarative Android UI for the Finance Widget.', ['finance']],
   'Node.js': ['Server-side TypeScript for the Recipe Manager.', ['recipe']],
   'Express': ['A small REST API that extracts and stores recipes.', ['recipe']],
-  'FastAPI': ['Serves the live attention dashboard and streams video.', ['tracker', 'clearko']],
+  'FastAPI': ['Serves the live attention dashboard and streams video, and the Ovoz transcription backend.', ['ovoz', 'tracker', 'clearko']],
   'WebSockets': ['Pushes live engagement numbers to the browser.', ['tracker']],
   'Supabase': ['Postgres, Realtime and Row Level Security on a free tier.', ['polling']],
   'PostgreSQL': ['The relational store behind live polls and Q&A.', ['polling']],
