@@ -18,7 +18,7 @@ Personal portfolio built for K0126002 (Gachon University, 2026 Fall).
 - Accessibility: skip link, visible focus styles, descriptive alt text, WCAG AA contrast in both themes, `prefers-reduced-motion` support, keyboard-operable dialogs
 - Lighthouse: Accessibility 100 in dark and light themes (desktop and mobile)
 - Downloadable one-page resume (PDF) with an on-site preview section
-- No frameworks and no build step. Deploys as-is on GitHub Pages.
+- The skills and projects sections are React components. They are rendered to plain HTML at build time and hydrated in the browser, so the page is complete before any script runs. The rest of the site is plain HTML, CSS and JavaScript. The built files are committed, so it deploys as-is on GitHub Pages.
 
 ## Structure
 
@@ -29,13 +29,19 @@ portfolio/
   js/
     theme.js      <- dark/light toggle
     effects.js    <- hero canvas, reveal, tilt, counters, nav
-    explorer.js   <- skills, projects, terminal, certificates
+    explorer.js   <- terminal, certificates, copy email
+    islands.js    <- built React bundle (skills + projects), from react/
+  react/          <- source of the React sections (run `npm install && npm run build` here)
   resume/
     resume.html   <- source of the PDF (also a web version)
     Rahimjon_Komiljonov_Resume.pdf
   images/
     media/        <- compressed demo videos, loops and posters
 ```
+
+## Rebuild the React sections
+
+In `react/`, run `npm install` once and then `npm run build`. It writes `js/islands.js` and updates the pre-rendered markup between the `island` comments in `index.html`.
 
 ## Run locally
 
