@@ -66,13 +66,21 @@
   </header>
 
   <h2>Summary</h2>
-  <p class="summary">Computer Engineering student at Gachon University with a strong interest in artificial intelligence, cybersecurity and software development. I build real-time computer-vision systems, full-stack web apps and cross-platform tools, from webcam attention analytics to a stock-portfolio widget for Windows and Android. Seeking internship and collaboration opportunities in AI, security and software engineering.</p>
+  <p class="summary">Computer Engineering student at Gachon University with a strong interest in artificial intelligence, cybersecurity and software development. I build speech and computer-vision systems, full-stack web apps and cross-platform tools, from Uzbek speech recognition to a stock-portfolio widget. Seeking internships and collaboration in AI, security and software.</p>
 
   <h2>Education</h2>
   <div class="row"><strong>Gachon University</strong><span class="when">2024 &ndash; Present</span></div>
   <div class="sub">Bachelor of Engineering, Computer Engineering &middot; South Korea</div>
 
   <h2>Selected Projects</h2>
+
+  <div class="item">
+    <div class="row"><strong>Ovoz</strong><span class="when">Nov 2026 &middot; open source (Apache-2.0)</span></div>
+    <div class="tech">Python &middot; PyTorch &middot; Hugging Face &middot; Whisper &middot; LoRA &middot; CTranslate2 &middot; FastAPI</div>
+    <ul>
+      <li>Fine-tuned Whisper for Uzbek speech recognition: 18.2% word error on read speech versus 90.1% for the best untuned model (47.8% on a 4-speaker conversation set). Compared 13 training runs, published the models on Hugging Face; 77 tests.</li>
+    </ul>
+  </div>
 
   <div class="item">
     <div class="row"><strong>ClearKo</strong><span class="when">Nov 2026 &middot; open source</span></div>
@@ -86,8 +94,7 @@
     <div class="row"><strong>Live Audience Attention Tracker</strong><span class="when">Aug &ndash; Sep 2026</span></div>
     <div class="tech">Python &middot; MediaPipe &middot; OpenCV &middot; FastAPI &middot; WebSockets &middot; NumPy &middot; Pandas</div>
     <ul>
-      <li>Real-time computer-vision system that labels each audience member as attentive, partially engaged or away, using 3D head pose (yaw/pitch) and eye-gaze blendshapes.</li>
-      <li>Live browser dashboard with engagement %, automatic camera calibration, CSV session logs and HTML reports with attention-dip detection.</li>
+      <li>Real-time computer-vision system that labels each audience member as attentive, partially engaged or away, using 3D head pose (yaw/pitch) and eye-gaze blendshapes, with a live dashboard, automatic camera calibration and HTML reports.</li>
       <li>Privacy-first design: stores only per-second aggregates, never video frames, face images or identities.</li>
     </ul>
   </div>
@@ -96,8 +103,7 @@
     <div class="row"><strong>Finance Widget</strong> <span class="when">2026 &middot; open source (MIT)</span></div>
     <div class="tech">Electron &middot; React &middot; TypeScript &middot; Kotlin &middot; Jetpack Compose &middot; WorkManager</div>
     <ul>
-      <li>Stock-portfolio tracker for Windows and Android with allocation chart, gain/loss, USD/KRW toggle and a home-screen widget; all data stays on the device (no account, no server).</li>
-      <li>Fixed a currency bug that showed a KRW stock as a +37,765% gain by making every price carry its own currency; 56 unit tests on Android.</li>
+      <li>Stock-portfolio tracker for Windows and Android with allocation chart, gain/loss, USD/KRW toggle and a home-screen widget, all on-device. Fixed a currency bug that showed a KRW stock as +37,765%; 56 unit tests.</li>
     </ul>
   </div>
 
@@ -105,8 +111,7 @@
     <div class="row"><strong>Audience Polling &amp; Q&amp;A</strong><span class="when">Jul &ndash; Aug 2026</span></div>
     <div class="tech">Next.js 15 &middot; React 19 &middot; TypeScript &middot; Supabase (PostgreSQL) &middot; Tailwind CSS &middot; Plotly</div>
     <ul>
-      <li>Real-time Slido-style polling: hosts launch polls and audiences vote by room code or QR code, with live charts and no page refreshes (Supabase Realtime).</li>
-      <li>Row Level Security separates host and audience privileges; Vercel Cron Jobs clean up stale rooms automatically.</li>
+      <li>Real-time Slido-style polling: hosts launch polls and audiences vote by room code or QR code, with live charts (Supabase Realtime). Row Level Security separates host and audience privileges; Vercel Cron Jobs clean up stale rooms.</li>
     </ul>
   </div>
 
@@ -114,7 +119,7 @@
     <div class="row"><strong>Recipe Manager</strong><span class="when">2026</span></div>
     <div class="tech">TypeScript &middot; Node.js &middot; Express &middot; SQLite &middot; Google Gemini API</div>
     <ul>
-      <li>Converts recipe websites, YouTube videos and Instagram posts into structured, searchable recipes; Gemini&rsquo;s multimodal API reads videos directly, with JSON-LD/Microdata fallbacks and JSON-Schema-constrained output.</li>
+      <li>Turns recipe websites, YouTube videos and Instagram posts into structured, searchable recipes; Gemini&rsquo;s multimodal API reads videos directly, with JSON-Schema-constrained output.</li>
     </ul>
   </div>
 
@@ -128,7 +133,7 @@
   <h2>Technical Skills</h2>
   <dl class="skills">
     <dt>Languages</dt><dd>Python, TypeScript, JavaScript, Kotlin, Java, SQL, HTML &amp; CSS</dd>
-    <dt>AI &amp; Vision</dt><dd>MediaPipe, OpenCV, PaddleOCR, Ollama, Google Gemini API, NumPy, Pandas</dd>
+    <dt>AI &amp; ML</dt><dd>PyTorch, Hugging Face, Whisper, MediaPipe, OpenCV, PaddleOCR, Ollama, Gemini API, NumPy, Pandas</dd>
     <dt>Web &amp; Mobile</dt><dd>Next.js, React, React Native, Expo, Tailwind CSS, Electron, Jetpack Compose</dd>
     <dt>Backend &amp; Data</dt><dd>Node.js, Express, FastAPI, WebSockets, Supabase, PostgreSQL, SQLite, Streamlit</dd>
     <dt>Tools</dt><dd>Git &amp; GitHub, GitHub Pages, Vercel</dd>
