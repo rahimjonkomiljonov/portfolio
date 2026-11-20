@@ -144,6 +144,68 @@ function ProjectDialog() {
   );
 }
 
+// "More on GitHub" line. It starts as the written text (so it is right without JavaScript and if
+// GitHub cannot be reached), then useEffect asks the GitHub API for the real numbers. The answer is
+// kept in sessionStorage for 10 minutes so visitors do not use up GitHub's 60-requests-an-hour limit.
+const GITHUB_USER = 'rahimjonkomiljonov';
+const CACHE_KEY = 'gh-live-v1';
+
+function daysAgo(iso) {
+  const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+  if (days <= 0) return 'today';
+  if (days === 1) return 'yesterday';
+  if (days < 60) return days + ' days ago';
+  return 'on ' + new Date(iso).toISOString().slice(0, 10);
+}
+
+function GitHubLive() {
+  const [live, setLive] = useState(null); // null = show the written text
+
+  useEffect(() => {
+    try {
+      const cached = JSON.parse(sessionStorage.getItem(CACHE_KEY));
+      if (cached && Date.now() - cached.at < 600000) {
+        setLive(cached.data);
+        return;
+      }
+    } catch {
+      /* no cache: fetch */
+    }
+    const controller = new AbortController();
+    async function load() {
+      try {
+        const [user, repos] = await Promise.all([
+          fetch('https://api.github.com/users/' + GITHUB_USER, { signal: controller.signal }).then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status))))),
+          fetch('https://api.github.com/users/' + GITHUB_USER + '/repos?sort=pushed&per_page=1', { signal: controller.signal }).then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status))))),
+        ]);
+        const data = { repos: user.public_repos, latest: repos[0] ? { name: repos[0].name, pushed: repos[0].pushed_at } : null };
+        setLive(data);
+        try {
+          sessionStorage.setItem(CACHE_KEY, JSON.stringify({ at: Date.now(), data }));
+        } catch {
+          /* storage blocked */
+        }
+      } catch {
+        /* offline, rate limited or aborted: keep the written text */
+      }
+    }
+    load();
+    return () => controller.abort();
+  }, []);
+
+  return (
+    <p className="more reveal">
+      More on <a href="https://github.com/rahimjonkomiljonov" target="_blank" rel="noopener">GitHub<span className="sr-only"> (opens in a new tab)</span></a>:{' '}
+      {live ? live.repos + ' public repositories' : '50+ repositories'}, from Python games to data analysis.
+      {live && live.latest && (
+        <>
+          {' '}Latest push: <a href={'https://github.com/' + GITHUB_USER + '/' + encodeURIComponent(live.latest.name)} target="_blank" rel="noopener">{live.latest.name}<span className="sr-only"> (opens in a new tab)</span></a>, {daysAgo(live.latest.pushed)}.
+        </>
+      )}
+    </p>
+  );
+}
+
 // "Things I've built": category filter, the cards, a live count for screen readers and the dialog.
 export default function Projects() {
   const [filter, setFilter] = useState('all');
@@ -170,6 +232,7 @@ export default function Projects() {
         ))}
       </div>
       <p id="filter-status" className="sr-only" role="status" aria-live="polite">{status}</p>
+      <GitHubLive />
       <ProjectDialog />
     </>
   );
